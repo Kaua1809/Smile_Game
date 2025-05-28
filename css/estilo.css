@@ -1,40 +1,92 @@
-.invisivel{
-    display:none;
-  }
-  .visivel{
-    display:inline;
-  }
-  .inicial {
-    text-align: center;
-    font-size: 100px;
-    background-color: rgb(255, 76, 186);
-    width: 150px;
-    height: 200px;
-    border: 15px solid rgb(119, 0, 255);
-    padding: 10px;
-    margin: 20px;
-  }
-  .acertou {
-    text-align: center;
-    color: rgb(0, 255, 242);
-    background-color: rgb(0, 244, 252);
-    width: 150px;
-    height: 200px;
-    border: 15px solid rgb(255, 0, 242);
-    padding: 10px;
-    margin: 20px;
-  }
-  .errou {
-    text-align: center;
-    font-size: 100px;
-    color: rgb(255, 0, 179);
-    background-color: rgb(255, 84, 84);
-    width: 150px;
-    height: 200px;
-    border: 15px solid rgb(255, 0, 242);
-    padding: 10px;
-    margin: 20px;
-  }
-  body {
-  background-color: #fa85b4; 
+/* Adiciona a fonte divertida */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+  font-family: 'Comic Neue', cursive;
+  text-align: center;
+}
+
+.invisivel {
+  display: none;
+}
+
+.visivel {
+  display: inline;
+}
+
+#principal h1 {
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 2px 2px #ff69b4;
+  font-family: 'Comic Neue', cursive;
+  text-align: center;
+}
+
+.inicial, .acertou, .errou {
+  text-align: center;
+  font-size: 100px;
+  width: 150px;
+  height: 200px;
+  border: 15px solid rgb(119, 0, 255);
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.inicial {
+  background-color: rgb(255, 182, 193);
+}
+
+.acertou {
+  color: #32CD32;
+  background-color: #98FB98;
+  border: 15px solid #00FF7F;
+  animation: pulinho 0.5s ease;
+}
+
+.errou {
+  color: #FF0000;
+  background-color: #FF7F7F;
+  border: 15px solid #FF4500;
+}
+
+.inicial img, .acertou img, .errou img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#resposta {
+  font-size: 1.5em;
+  color: #ffffff;
+  text-shadow: 1px 1px #ff69b4;
+}
+
+#joganovamente, #reiniciar {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#joganovamente:hover, #reiniciar:hover {
+  background-color: #ff1493;
+}
+
+/* Animação do pulinho */
+@keyframes pulinho {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-30px); }
+  60% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
